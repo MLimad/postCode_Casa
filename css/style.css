@@ -1,0 +1,62 @@
+:root {
+    --yellow: #fce532;
+    --blue: #004595;
+  }
+
+  @font-face {
+    font-family: CairoFont;
+    src: url(../fonts/Cairo/Cairo-Regular.ttf);
+  }
+
+  body{
+      font-family: CairoFont;
+      color:var(--blue);
+  }
+
+  .navbar {
+      background-color:var(--blue)!important;
+  }
+  .navbar a{
+    color: var(--yellow)!important;
+
+  }
+
+.jumbotron{
+    background-color: var(--yellow) ;
+}
+
+input[type="text"]:placeholder {
+    text-align: right;
+    
+}
+
+input[type="text"]{
+    text-align: right;
+    border: 1px solid var(--blue);
+
+}
+
+input[type="text"]:-moz-placeholder {
+    text-align: right;
+}
+input[type="text"]:-ms-input-placeholder {
+    text-align: right;
+}
+input[type="text"]::-webkit-input-placeholder {
+    text-align: right;
+}
+
+
+
+footer{
+    background-color: var(--blue);
+    color: white;
+    text-align: center;
+    padding: 5px;
+}
+
+.table thead{
+
+    color: white;
+    background-color: var(--blue);
+}

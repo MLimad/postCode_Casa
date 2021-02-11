@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Code Postal</title>
+</head>
+
+<body class="text-right" ng-app="myApp">
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/angular.min.js"></script>
+  <script src="js/jquery-3.5.1.min.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    
+    </div>
+  </nav>
+
+  <div class="jumbotron">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-11">
+
+          <h1 class="display-4"> بريد المغرب</h1>
+          <p class="lead">يمكنكم زوارنا الكرام من خلال هذه البوابةالالكترونية البحث عن رقم البريد الخاص بمنطقتكم او الحي
+            الذي تقطنون به</p>
+          <hr class="my-4">
+          <p>من خلال هذه القائمة يمكنكم البحث عن طريق الرقم البريدي أو اسم الحي</p>
+
+        </div>
+        <div class="col-md-1">
+
+          <img src="images/postemaroc.png" alt="logo Poste Maroc" width="100px" height="100px" class="img-fluid mt-3">
+        </div>
+      </div>
+
+      <!-- <a class="btn btn-primary btn-lg" href="#" role="button">أبدأ</a> -->
+    </div>
+  </div>
+
+  <div class="contianer">
+    <div class="row justify-content-center mx-0">
+      <div class="col-md-6">
+        <div class="alert alert-warning" role="alert">
+          عملية البحث  تتم فقط باللغة العربية 
+          <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+
+        </div>
+        <div class="form-group">
+          <label for="name">اسم المنطقة أو الرقم البريدي </label>
+          <input type="text" class="form-control" placeholder="عين الشق أو 20470" id="name" ng-model="inputPostal">
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Row Table -->
+
+    <div class="row justify-content-center mx-0">
+      <div class="col-md-6">
+        <table class="table table-striped ">
+          <thead>
+            <tr>
+              <th scope="col">الرقم البريدي <i class="fa fa-hashtag" aria-hidden="true"></i></th>
+              <th scope="col">الحي أو المنطقة <i class="fa fa-map-marker" aria-hidden="true"></i></th>
+              <th scope="col">المدينة <i class="fa fa-home" aria-hidden="true"></i></th>
+            </tr>
+          </thead>
+          <tbody  ng-controller="myCtrl">
+            <tr ng-repeat="x in postal | orderBy:'quartier' | filter:inputPostal  " >
+              <td>{{ x.code }}</td>
+              <td>{{ x.quartier | uppercase  }}</td>
+              <td>{{ x.ville | uppercase}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+<footer>
+  <small >
+    Copyrights ML imad 2021 <br>
+
+  </small>
+</footer>
+
+</body>
+
+</html>
